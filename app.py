@@ -1,17 +1,13 @@
-import http.server
 import ptvsd
-import socketserver
-from http import HTTPStatus
+from flask import Flask
+app = Flask(__name__)
 
-class Handler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(HTTPStatus.OK)
-        self.end_headers()
-        self.wfile.write(b'Hello world!')
-
+@app.route('/')
+def hello_world():
+    msg = 'Hello World!'
+    return msg
 
 if __name__ == '__main__':
+  print('Starting hello-world server...')
   ptvsd.enable_attach()
-  print("Starting hello-world server...")
-  server = socketserver.TCPServer(('0.0.0.0', 8080), Handler)
-  server.serve_forever()
+  app.run(host='0.0.0.0', port=8080)
