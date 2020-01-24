@@ -1,0 +1,8 @@
+name: hello-world
+image: okteto/python:3
+command:
+- bash
+workdir: /okteto
+forward:
+  - 8080:8080
+  - 5678:5678
