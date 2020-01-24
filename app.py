@@ -1,4 +1,6 @@
 import ptvsd
+import os
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -9,5 +11,8 @@ def hello_world():
 
 if __name__ == '__main__':
   print('Starting hello-world server...')
-  ptvsd.enable_attach()
-  app.run(host='0.0.0.0', port=8080)
+  if os.environ.get('WERKZEUG_RUN_MAIN'):
+    # only attach debugger on main process
+    ptvsd.enable_attach()
+
+  app.run(host='0.0.0.0', port=8080, use_debugger=False, use_reloader=True)
