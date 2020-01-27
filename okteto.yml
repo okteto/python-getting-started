@@ -3,6 +3,8 @@ image: okteto/python:3
 command:
 - bash
 workdir: /okteto
+environment:
+  - FLASK_ENV=development
 forward:
   - 8080:8080
-  - 5678:5678
+  - 3500:3500

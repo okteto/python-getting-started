@@ -13,6 +13,6 @@ if __name__ == '__main__':
   print('Starting hello-world server...')
   if os.environ.get('WERKZEUG_RUN_MAIN'):
     # only attach debugger on main process
-    ptvsd.enable_attach()
+    ptvsd.enable_attach(("0.0.0.0", "3500"))
 
-  app.run(host='0.0.0.0', port=8080, use_debugger=False, use_reloader=True)
+  app.run(host='0.0.0.0', port=8080)
