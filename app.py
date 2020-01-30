@@ -11,6 +11,7 @@ def hello_world():
 
 def attach():
   if os.environ.get('WERKZEUG_RUN_MAIN'):
+    print('Connecting to debugger...')
     pydevd_pycharm.settrace('0.0.0.0', port=3500, stdoutToServer=True, stderrToServer=True)
 
 if __name__ == '__main__':
