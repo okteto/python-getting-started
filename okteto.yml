@@ -6,4 +6,5 @@ environment:
   - FLASK_ENV=development
 forward:
   - 8080:8080
+reverse:
   - 3500:3500
