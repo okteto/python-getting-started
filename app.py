@@ -17,6 +17,6 @@ def attach():
 if __name__ == '__main__':
   print('Starting hello-world server...')
   # comment out to use Pycharm's remote debugger
-  #attach()
+  attach()
 
   app.run(host='0.0.0.0', port=8080)
