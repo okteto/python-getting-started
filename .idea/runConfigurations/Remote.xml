@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Remote" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
+    <module name="python-getting-started" />
+    <option name="PORT" value="3500" />
+    <option name="HOST" value="localhost" />
+    <PathMappingSettings>
+      <option name="pathMappings">
+        <list>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/okteto" />
+        </list>
+      </option>
+    </PathMappingSettings>
+    <option name="REDIRECT_OUTPUT" value="true" />
+    <option name="SUSPEND_AFTER_CONNECT" value="false" />
+    <method v="2" />
+  </configuration>
+</component>
