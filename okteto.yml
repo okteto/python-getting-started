@@ -7,5 +7,3 @@ forward:
   - 8080:8080
 reverse:
   - 3500:3500
-persistentVolume:
-  enabled: false
