@@ -1,6 +1,7 @@
 name: hello-world
 image: okteto/hello-world:python-dev
 command: [ "python", "app.py"]
+workdir: /usr/src/app
 environment:
   - FLASK_ENV=development
 forward:
