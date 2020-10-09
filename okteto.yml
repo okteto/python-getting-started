@@ -8,5 +8,7 @@ forward:
   - 8080:8080
 reverse:
   - 3500:3500
+sync:
+  - .:/usr/src/app
 persistentVolume:
   enabled: false
