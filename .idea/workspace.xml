@@ -38,7 +38,7 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
-      <option name="PORT" value="3500" />
+      <option name="PORT" value="9000" />
       <option name="HOST" value="localhost" />
       <PathMappingSettings>
         <option name="pathMappings">

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Remote" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
     <module name="python-getting-started" />
-    <option name="PORT" value="3500" />
+    <option name="PORT" value="9000" />
     <option name="HOST" value="localhost" />
     <PathMappingSettings>
       <option name="pathMappings">
