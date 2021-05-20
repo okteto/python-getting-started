@@ -1,5 +1,8 @@
 FROM python:3-slim
 
+# setup okteto message
+COPY bashrc /root/.bashrc
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt requirements.txt
