@@ -1,0 +1,17 @@
+icon: https://apps.okteto.com/movies/icon.png
+build:
+  hello-world:
+    context: .
+deploy:
+  - kubectl apply -f k8s.yml
+dev:
+  hello-world:
+    command: bash
+    forward:
+      - 8080:8080
+    volumes:
+      - /root/.cache/pip
+    sync:
+      - .:/usr/src/app
+    reverse:
+      - 9000:9000
