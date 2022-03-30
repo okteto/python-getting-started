@@ -1,7 +1,9 @@
 icon: https://apps.okteto.com/movies/icon.png
+
 build:
   web:
     context: .
+
 deploy:
   - helm upgrade --install web chart --set web.image=${OKTETO_BUILD_WEB_IMAGE}
 
@@ -10,5 +12,7 @@ dev:
     command: bash
     forward:
       - 8080:8080
+    reverse:
+      - 9000:9000
     sync:
       - .:/usr/src/app
