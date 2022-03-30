@@ -1,29 +1,3 @@
-cache:
-  image: redis:2.8.19
-  replicaCount: 1
-  limit:
-    memory: "100Mi"
-    cpu: "50m"
-db:
-  image: postgres:9.4
-  replicaCount: 1
-  request:
-    memory: "64Mi"
-    cpu: "250m"
-  limit:
-    memory: "256Mi"
-    cpu: "250m"
-  user: postgres
-  pass: postgres
-  name: postgres
-queue:
-  image: rabbitmq:3.6.0
-  replicaCount: 1
-  limit:
-    memory: "200Mi"
-    cpu: "100m"
-  user: admin
-  pass: mypass
 web:
-  image: okteto/django:latest
+  image: okteto/hello-world:python
   replicaCount: 1
