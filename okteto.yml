@@ -1,17 +1,14 @@
 icon: https://apps.okteto.com/movies/icon.png
 build:
-  hello-world:
+  web:
     context: .
 deploy:
-  - kubectl apply -f k8s.yml
+  - helm upgrade --install web chart --set web.image=${OKTETO_BUILD_WEB_IMAGE}
+
 dev:
-  hello-world:
+  web:
     command: bash
     forward:
       - 8080:8080
-    volumes:
-      - /root/.cache/pip
     sync:
       - .:/usr/src/app
-    reverse:
-      - 9000:9000
