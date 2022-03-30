@@ -10,9 +10,9 @@ deploy:
 dev:
   web:
     command: bash
+    sync:
+      - .:/usr/src/app
     forward:
       - 8080:8080
     reverse:
       - 9000:9000
-    sync:
-      - .:/usr/src/app
