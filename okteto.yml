@@ -7,7 +7,7 @@ deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    command: python app.py
+    command: bash
     sync:
       - .:/usr/src/app
     reverse:
