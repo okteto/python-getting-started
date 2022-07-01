@@ -1,18 +1,14 @@
 name: python-getting-started
 build:
-  python-getting-started:
+  hello-world:
+    image: okteto.dev/python-hello-world:1.0.0
     context: .
-    dockerfile: Dockerfile
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/hello-world:python
     command: python app.py
-    workdir: /usr/src/app
     sync:
       - .:/usr/src/app
-    environment:
-      - name=$USER
     forward:
       - 8080:8080
