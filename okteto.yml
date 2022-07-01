@@ -12,3 +12,5 @@ dev:
       - .:/usr/src/app
     reverse:
       - 9000:9000
+    volumes:
+      - /root/.cache/pip
