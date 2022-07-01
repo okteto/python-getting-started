@@ -10,5 +10,5 @@ dev:
     command: python app.py
     sync:
       - .:/usr/src/app
-    forward:
-      - 8080:8080
+    reverse:
+      - 9000:9000
