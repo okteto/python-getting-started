@@ -1,0 +1,16 @@
+name: python-getting-started
+build:
+  hello-world:
+    image: okteto.dev/python-hello-world:1.0.0
+    context: .
+deploy:
+  - kubectl apply -f k8s.yml
+dev:
+  hello-world:
+    command: bash
+    sync:
+      - .:/usr/src/app
+    reverse:
+      - 9000:9000
+    volumes:
+      - /root/.cache/pip
