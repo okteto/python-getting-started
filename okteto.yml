@@ -8,6 +8,8 @@ deploy:
 dev:
   hello-world:
     command: bash
+    environment:
+      - FLASK_ENV=development
     sync:
       - .:/usr/src/app
     reverse:
