@@ -1,0 +1,5 @@
+deploy:
+- okteto build -t okteto.dev/python-getting-started:${OKTETO_GIT_COMMIT}
+- kustomize create --resources k8s.yml
+- kustomize edit set image okteto/hello-world:python=okteto.dev/python-getting-started:${OKTETO_GIT_COMMIT}
+- kubectl apply -k .
