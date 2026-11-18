@@ -4,7 +4,7 @@ dev:
   hello-world:
     command: bash
     environment:
-      - FLASK_ENV=development
+      - FLASK_DEBUG=1
     sync:
       - .:/usr/src/app
     reverse:
