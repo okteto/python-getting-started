@@ -1,6 +1,6 @@
 FROM python:3.15.2-trixie AS dev
 
-RUN pip install --no-cache-dir pydevd-pycharm==263.7307.206
+RUN pip install --no-cache-dir pydevd-pycharm==263.7307.329
 
 WORKDIR /usr/src/app
 COPY requirements.txt .
