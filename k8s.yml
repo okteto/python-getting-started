@@ -12,7 +12,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: ghcr.io/okteto/python-getting-started:hello-world
+      - image: ${OKTETO_BUILD_HELLO_WORLD_IMAGE}
         name: hello-world
 
 ---
