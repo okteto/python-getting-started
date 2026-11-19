@@ -25,9 +25,7 @@ test:
 dev:
   hello-world:
     image: ${OKTETO_BUILD_DEV_IMAGE}
-    command: python app.py
-    environment:
-      - FLASK_DEBUG=1
+    command: uvicorn app:app --host 0.0.0.0 --port 8080 --reload
     sync:
       - .:/usr/src/app
     persistentVolume:

@@ -1,22 +1,20 @@
-import os
-from flask import Flask
+from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/')
+
+@app.get('/', response_class=PlainTextResponse)
 def hello_world():
     msg = 'Hello World!'
     return msg
 
+
 def attach():
-  if os.environ.get('WERKZEUG_RUN_MAIN'):
     import pydevd_pycharm
     print('Connecting to debugger...')
-    pydevd_pycharm.settrace('localhost', port=9000, stdout_to_server=True, stderr_to_server=True)
+    pydevd_pycharm.settrace('localhost', port=9000, suspend=False, stdout_to_server=True, stderr_to_server=True)
 
-if __name__ == '__main__':
-  print('Starting hello-world server...')
-  # uncomment to use PyCharm's remote debugger
-  # attach()
 
-  app.run(host='0.0.0.0', port=8080)
+# uncomment to use PyCharm's remote debugger
+# attach()
