@@ -1,0 +1,6 @@
+# Send only what "pip install" and the application need to the build context.
+# Anything else (.git, manifests, docs, virtual environments) would bloat the
+# images and invalidate the build cache on every unrelated change.
+*
+!requirements.txt
+!*.py
